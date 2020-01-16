@@ -1,6 +1,6 @@
 ---
 - name: GATHER INFORMATION FROM ROUTERS
-  hosts: all
+  hosts: env
   connection: network_cli
   gather_facts: no
 
