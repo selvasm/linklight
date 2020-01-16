@@ -5,9 +5,22 @@
     machine:
       username: '{{ ansible_user }}'
       password: '{{ ansible_password }}'
+      
+    network:
+      username: '{{ lookup("env", "ANSIBLE_NET_USERNAME") }}'
+      password: '{{ lookup("env", "ANSIBLE_NET_PASSWORD") }}'
+
+    azure:
+      client_id: '{{ lookup("env", "AZURE_CLIENT_ID") }}'
+      secret: '{{ lookup("env", "AZURE_SECRET") }}'
+      tenant: '{{ lookup("env", "AZURE_TENANT") }}'
+      subscription_id: '{{ lookup("env", "AZURE_SUBSCRIPTION_ID") }}'
 
   tasks:
-  
-    - name: to Display
-      debug:
+    - debug:
         var: machine
+
+    - debug:
+        var: network
+    - debug:
+        var: azure
