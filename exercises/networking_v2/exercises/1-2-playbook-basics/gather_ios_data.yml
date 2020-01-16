@@ -1,26 +1,13 @@
 ---
-- hosts: localhost
+- name: GATHER INFORMATION FROM ROUTERS
+  hosts: all
+  connection: network_cli
   gather_facts: no
-  vars:
-    machine:
-      username: '{{ ansible_user }}'
-      password: '{{ ansible_password }}'
-      
-    network:
-      username: '{{ lookup("env", "ANSIBLE_NET_USERNAME") }}'
-      password: '{{ lookup("env", "ANSIBLE_NET_PASSWORD") }}'
-
-    azure:
-      client_id: '{{ lookup("env", "AZURE_CLIENT_ID") }}'
-      secret: '{{ lookup("env", "AZURE_SECRET") }}'
-      tenant: '{{ lookup("env", "AZURE_TENANT") }}'
-      subscription_id: '{{ lookup("env", "AZURE_SUBSCRIPTION_ID") }}'
 
   tasks:
-    - debug:
-        var: machine
+    - name: GATHER ROUTER FACTS
+      ios_facts:
+      register: show_output
 
     - debug:
-        var: network
-    - debug:
-        var: azure
+        var: show_output
