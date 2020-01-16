@@ -10,4 +10,4 @@
   
     - name: to Display
       debug:
-        var: machine.username
+        var: machine
