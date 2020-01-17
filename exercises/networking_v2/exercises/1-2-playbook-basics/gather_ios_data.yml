@@ -3,8 +3,6 @@
   hosts: env
   connection: network_cli
   gather_facts: no
-  environment:
-    ansible_network_os: ios 
 
   tasks:
     - name: GATHER ROUTER FACTS
