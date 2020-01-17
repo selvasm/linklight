@@ -19,7 +19,7 @@
 
     - name: copy file from controller to ios + scp (Default)
       net_put:
-        src: "{{ inventory_hostname }}.config"
+        src: "/routerbackup/{{ inventory_hostname }}.config"
       register: result
 
     - name: Replace the configuration...
