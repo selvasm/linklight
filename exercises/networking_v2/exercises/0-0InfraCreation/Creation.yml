@@ -5,9 +5,9 @@
     - name: deploy Routers
       azure_rm_virtualmachine:
         resource_group: AnsibleTower-Killian-Zoubayer
-        name: {{ item }}
-        admin_username: {{ansible_ssh_user}}
-        admin_password: {{ansible_ssh_password}}
+        name: "{{ item }}"
+        admin_username: "{{ ansible_ssh_user }}"
+        admin_password: "{{ ansible_ssh_password }}"
         image:
           offer: cisco-csr-1000v
           publisher: cisco
