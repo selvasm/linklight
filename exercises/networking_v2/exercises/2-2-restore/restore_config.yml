@@ -17,13 +17,13 @@
         msg: "{{ inventory_hostname }} is the iventoryname"
 
 
-#    - name: copy file from controller to ios + scp (Default)
-#      net_put:
-#        src: "{{ inventory_hostname }}.config"
-#      register: result
+    - name: copy file from controller to ios + scp (Default)
+      net_put:
+        src: "{{ inventory_hostname }}.config"
+      register: result
 
-#    - name: Replace the configuration...
-#      ios_command:
-#        commands:
-#          - config replace flash:{{ inventory_hostname }}.config force
+    - name: Replace the configuration...
+      ios_command:
+        commands:
+          - config replace flash:{{ inventory_hostname }}.config force
 
