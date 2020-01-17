@@ -5,9 +5,9 @@
     - name: deploy Routers
       command: az vm create -n {{ item }}  -g AnsibleTower-Killian-Zoubayer --image cisco:cisco-csr-1000v:16_12-payg-sec:16.12.120190816 --data-disk-sizes-gb 8 --admin-username devoteam --admin-password "devoteam2020!" --authentication-type password -l francecentral --size Standard_DS4_v2 --subnet {{ item }}-subnet --vnet-name  ansible-vnet --nics {{ item }}VMNic
       with_items:
-        - Router-1
-        - Router-2
-        - Router-3
-        - Router-4
+        - Router-new-1
+        - Router-new-2
+        - Router-new-3
+        - Router-new-4
       async: 45
       poll: 0
