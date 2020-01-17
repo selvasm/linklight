@@ -14,7 +14,7 @@
         match: none
     - name: To display the variable
       debug:
-        msg: "{{ inventory_hostname }} is the Inventory name"
+        msg: "{{ inventory_hostname }} is the Inventory name change"
 
 
     - name: copy file from controller to ios + scp (Default)
