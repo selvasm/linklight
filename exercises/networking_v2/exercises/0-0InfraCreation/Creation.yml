@@ -14,8 +14,8 @@
           sku: '16_12-payg-sec'
           version: 16.12.120190816
         data_disks:
-          disk_size_gb: 8
-          lun: 0
+          - lun: 0
+            disk_size_gb: 8
         location: francecentral
         vm_size: Standard_DS4_v2
         subnet: zrouter1-subnet
