@@ -18,7 +18,7 @@
           lun: 0
         location: francecentral
         vm_size: Standard_DS4_v2
-        subnet: {{ item }}-subnet
+        subnet: "{{ item }}-subnet"
         virtual_network_name: ansible-vnet
       with_items:
         - Routz1
