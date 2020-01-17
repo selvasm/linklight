@@ -1,6 +1,6 @@
 ---
 - hosts: localhost
-  become: yes
+  become: false
   tasks:
     - name: deploy Routers
       azure_rm_virtualmachine:
