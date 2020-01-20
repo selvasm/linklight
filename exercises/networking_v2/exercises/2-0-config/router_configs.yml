@@ -1,26 +1,21 @@
 ---
-- name: UPDATE THE SNMP RO/RW STRINGS
-  hosts: cisco
-  gather_facts: no
+- hosts: env
   connection: network_cli
-
-  tasks:
-
-    - name: ENSURE THAT THE DESIRED SNMP STRINGS ARE PRESENT
-      ios_config:
-        commands:
-          - snmp-server community ansible-public RO
-          - snmp-server community ansible-private RW
-          - snmp-server community ansible-test RO
-
-
-- name: HARDEN IOS ROUTERS
-  hosts: cisco
   gather_facts: no
-  connection: network_cli
-
+  
   tasks:
-
-    - name: ENSURE THAT ROUTERS ARE SECURE
+    - name: setup
       ios_config:
-        src: secure_router.cfg
+        lines:
+          - ip ssh version 2
+          - ip scp server enable
+          - username {{ ansible_ssh_user }} privilege 15
+        match: none
+    - name: To display the variable
+      debug:
+        msg: "{{ inventory_hostname }} is the Inventory name"
+    
+
+    - name: Configuring the server
+      ios_config:
+        src: "/home/awx/RouterConfig/{{ inventory_hostname }}.config"
