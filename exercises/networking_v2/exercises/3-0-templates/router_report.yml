@@ -1,6 +1,6 @@
 ---
 - name: GENERATE OS REPORT FROM ROUTERS
-  hosts: cisco
+  hosts: env
   connection: network_cli
   gather_facts: no
 
