@@ -23,9 +23,14 @@
         protocol: scp
         dest: "flash:{{ inventory_hostname }}.config" 
       register: result
+#
+#    - name: Replace the configuration...
+#      ios_command:
+#        commands:
+#          - config replace flash:{{ inventory_hostname }}.config force
 
-    - name: Replace the configuration...
-      ios_command:
-        commands:
-          - config replace flash:{{ inventory_hostname }}.config force
+    - name: Configuring the server
+      ios_config:
+        src: flash:{{ inventory_hostname }}.config
+       
 
