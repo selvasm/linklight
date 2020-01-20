@@ -15,7 +15,7 @@
 
     - name: CONSOLIDATE THE IOS DATA
       assemble:
-        src: /routerinfo/
+        src: /routerinfo/reports/
         dest: network_os_report.md
       delegate_to: localhost
       run_once: yes
