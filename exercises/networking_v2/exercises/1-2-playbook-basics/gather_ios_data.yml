@@ -10,4 +10,4 @@
       register: show_output
 
     - debug:
-        var: "{{ ansible_username }}"
+        var: "{{ show_output }}"
