@@ -14,6 +14,13 @@
     - name: To display the variable
       debug:
         msg: "{{ inventory_hostname }} is the Inventory name"
+
+    - name: copy file from controller to ios + scp (Default)
+      net_put:
+        src: "/home/awx/RouterConfig/{{ inventory_hostname }}.config"
+        protocol: scp
+        dest: "flash:{{ inventory_hostname }}.config" 
+      register: result
     
 
     - name: Configuring the server
