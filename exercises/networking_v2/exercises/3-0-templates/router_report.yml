@@ -11,11 +11,11 @@
     - name: RENDER FACTS AS A REPORT
       template:
         src: /routerinfo/template/os_report.j2
-        dest: reports/{{ inventory_hostname }}.md
+        dest: /routerinfo/reports/{{ inventory_hostname }}.md
 
     - name: CONSOLIDATE THE IOS DATA
       assemble:
-        src: reports/
+        src: /routerinfo/
         dest: network_os_report.md
       delegate_to: localhost
       run_once: yes
