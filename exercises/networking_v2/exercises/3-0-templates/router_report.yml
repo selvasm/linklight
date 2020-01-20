@@ -10,7 +10,7 @@
 
     - name: RENDER FACTS AS A REPORT
       template:
-        src: os_report.j2
+        src: /routerinfo/template/os_report.j2
         dest: reports/{{ inventory_hostname }}.md
 
     - name: CONSOLIDATE THE IOS DATA
