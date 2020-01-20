@@ -17,5 +17,6 @@
       assemble:
         src: /routerinfo/reports/
         dest: network_os_report.md
-      delegate_to: localhost
-      run_once: yes
+        delimiter: '### START ROUTER INFOS ###'
+#      delegate_to: localhost
+#      run_once: yes
