@@ -27,7 +27,7 @@
         subnet: Router-1-Subnet
         virtual_network_name: ansible-vnet
         tags:
-          - env: demo
+          env: demo
       with_items:
         - zrouter5
         - zrouter4
