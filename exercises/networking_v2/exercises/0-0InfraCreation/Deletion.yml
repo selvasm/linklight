@@ -6,8 +6,23 @@
     - name: Create new  Routers
       azure_rm_virtualmachine:
         resource_group: AnsibleTower-Killian-Zoubayer
-        name: Router-1
+        name: "{{ item }}"
         state: absent
         remove_on_absent: 
           - virtual_storage
           - public_ips
+      with_items:
+        - Router-2
+        - Router-3
+        - Router-4
+        - zrouter3
+        - zrouter4
+        - zrouter5
+      async: 45
+      poll: 0
+
+    - name: Waiting to get the final status
+      wait_for:
+        state: absent
+      
+      
