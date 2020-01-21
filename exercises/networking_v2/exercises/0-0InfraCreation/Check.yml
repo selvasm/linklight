@@ -8,8 +8,6 @@
         resource_group: AnsibleTower-Killian-Zoubayer
         name: Router-1
       register: status_result
-    #  until: status_result.rc 
-    #  delay: 10
-
-    - debug:
-        var: status_result.msg
+      until: "'Error' in command_result.stderr"
+      delay: 10
+      ignore_errors: yes
