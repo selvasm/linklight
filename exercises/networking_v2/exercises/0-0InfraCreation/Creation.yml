@@ -6,9 +6,14 @@
     - name: Create new  Routers
       azure_rm_virtualmachine:
         resource_group: AnsibleTower-Killian-Zoubayer
-        name: zrouter2
+        name: zrouter3
         admin_username: "{{ ansible_username }}"
         admin_password: "{{ ansible_password }}"
+        image:
+          offer: cisco-csr-1000v
+          publisher: cisco
+          sku: '16_12-payg-sec'
+          version: 16.12.120190816
         plan:
           product: cisco-csr-1000v
           publisher: cisco
