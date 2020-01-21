@@ -8,5 +8,8 @@
         resource_group: AnsibleTower-Killian-Zoubayer
         name: Router-2
       register: status_result
-      until: status_result| failed
-      delay: 10
+    #  until: status_result.rc 
+    #  delay: 10
+
+    - debug:
+        var: status_result.rc
