@@ -8,5 +8,7 @@
         resource_group: AnsibleTower-Killian-Zoubayer
         name: Router-1
       register: result
-      until: result.stdout.find("Error") != -1
-      delay: 10
+
+      #until: result.stdout.find("Error") != -1
+      #delay: 10
+    - debug: var=result
