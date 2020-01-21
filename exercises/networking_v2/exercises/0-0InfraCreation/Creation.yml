@@ -6,7 +6,7 @@
     - name: Add Subnet
       azure_rm_subnet:
         resource_group: AnsibleTower-Killian-Zoubayer
-        name: mySubnet
+        name: zrouter1-subnet
         address_prefix: "10.100.100.0/24"
         virtual_network: ansible-vnet
 
