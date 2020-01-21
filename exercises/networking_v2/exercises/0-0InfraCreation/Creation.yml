@@ -31,5 +31,3 @@
       with_items:
         - zrouter5
         - zrouter4
-      async: 45
-      poll: 0
