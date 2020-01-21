@@ -5,7 +5,7 @@
 #  routers under the env
 
 ---
-- hosts: env
+- hosts: localhost
   become: false
 
   task:
