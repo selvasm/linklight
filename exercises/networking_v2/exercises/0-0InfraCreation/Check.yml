@@ -11,3 +11,13 @@
       until: "'error' in command_result.stdout"
       delay: 10
       ignore_errors: yes
+
+
+    - name: Create new  Routers
+      azure_rm_virtualmachine_info:
+        resource_group: AnsibleTower-Killian-Zoubayer
+        name: Router-2
+      register: status_result2
+
+    - debug:
+        var: status_result2
