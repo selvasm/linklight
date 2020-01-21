@@ -6,7 +6,7 @@
     - name: Create new  Routers
       azure_rm_virtualmachine:
         resource_group: AnsibleTower-Killian-Zoubayer
-        name: zrouter1
+        name: zrouter2
         admin_username: "{{ ansible_username }}"
         admin_password: "{{ ansible_password }}"
         plan:
