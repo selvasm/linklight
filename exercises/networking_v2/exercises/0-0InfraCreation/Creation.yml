@@ -9,11 +9,10 @@
         name: zrouter1
         admin_username: "{{ ansible_username }}"
         admin_password: "{{ ansible_password }}"
-        image:
-          offer: cisco-csr-1000v
+        plan:
+          product: cisco-csr-1000v
           publisher: cisco
-          sku: '16_12-payg-sec'
-          version: 16.12.120190816
+          name: '16_12-payg-sec'
         data_disks:
           - lun: 0
             disk_size_gb: 8
