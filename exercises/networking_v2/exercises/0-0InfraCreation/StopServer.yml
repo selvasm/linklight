@@ -8,7 +8,7 @@
 - hosts: localhost
   become: false
 
-  task:
+  tasks:
 
 # To initiate the stop routers simultaneously across all the machine,
     - name: To Stop the Routers
