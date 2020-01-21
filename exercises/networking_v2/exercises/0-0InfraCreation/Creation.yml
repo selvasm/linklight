@@ -3,15 +3,7 @@
   become: false
   tasks:
 
-    - name: Add Subnet
-      azure_rm_subnet:
-        resource_group: AnsibleTower-Killian-Zoubayer
-        name: zrouter1-subnet
-        address_prefix: "10.100.100.0/24"
-        virtual_network: ansible-vnet
-
-
-    - name: deploy Routers
+    - name: Create new  Routers
       azure_rm_virtualmachine:
         resource_group: AnsibleTower-Killian-Zoubayer
         name: zrouter1
@@ -27,6 +19,6 @@
             disk_size_gb: 8
         location: francecentral
         vm_size: Standard_DS4_v2
-        subnet: zrouter1-subnet
+        subnet: Router-1-Subnet
         virtual_network_name: ansible-vnet
 
