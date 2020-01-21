@@ -1,0 +1,37 @@
+#This play is stop all the Routers and corresponding machine.
+
+
+#It is executed based from the localhost and runs across all 
+#  routers under the env
+
+---
+- hosts: env
+  become: false
+
+  task:
+
+# To initiate the stop routers simultaneously across all the machine,
+    - name: To Stop the Routers
+      azure_rm_virtualmachine:
+        resource_group: AnsibleTower-Killian-Zoubayer
+        name: "{{ item }}"
+        started: false
+      with_items:
+        - zrouter3
+        - zrouter4
+        - zrouter5
+      async: 40
+      poll: 0
+    
+# To initiate the wait and ensure all  above routers are stopped. 
+    - name: To Wait till the routers are down
+      wait_for:
+        host: "{{ item }}"
+        state: stopped
+        retry: 5
+        delay: 40
+      with_items:
+        - zrouter3
+        - zrouter4
+        - zrouter5
+

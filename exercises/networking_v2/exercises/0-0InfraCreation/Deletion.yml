@@ -17,7 +17,7 @@
       async: 45
       poll: 0
 
-    - name: To Wait till the routers are down
+    - name: To Wait till the routers are Deleted
       wait_for:
         host: "{{ item }}"
         state: absent
