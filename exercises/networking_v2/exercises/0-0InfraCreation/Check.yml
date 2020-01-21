@@ -12,4 +12,4 @@
     #  delay: 10
 
     - debug:
-        var: status_result.rc
+        var: status_result.msg
