@@ -28,6 +28,6 @@
 
     
     - debug:
-      msg: "All Resources are deleted"
+        msg: "All Resources are deleted"
       
       
