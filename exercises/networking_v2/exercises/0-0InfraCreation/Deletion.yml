@@ -1,0 +1,13 @@
+---
+- hosts: localhost
+  become: false
+  tasks:
+
+    - name: Create new  Routers
+      azure_rm_virtualmachine:
+        resource_group: AnsibleTower-Killian-Zoubayer
+        name: Router-1
+        state: absent
+        remove_on_absent: 
+          - virtual_storage
+          - public_ips
