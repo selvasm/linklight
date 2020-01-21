@@ -6,9 +6,7 @@
     - name: Create new  Routers
       azure_rm_virtualmachine_info:
         resource_group: AnsibleTower-Killian-Zoubayer
-        name: Router-1
-      register: result
-
-      #until: result.stdout.find("Error") != -1
-      #delay: 10
-    - debug: var=result
+        name: Router-2
+      register: status_result
+      until: status_result| failed
+      delay: 10
