@@ -23,4 +23,6 @@
     - name: Pushing the running to startup config
       ios_command:
         commands:
-          - copy running-config startup-config
+          command: 'copy running-config startup-config'
+          prompt: 'Destination filename [startup-config]?'
+          answer: 'y'
