@@ -19,10 +19,6 @@
     - name: Configuring the server
       ios_config:
         src: "/home/awx/RouterConfig/{{ inventory_hostname }}.config"
+        save_when: always
 
-    - name: Pushing the running to startup config
-      ios_command:
-        commands:
-          command: 'copy running-config startup-config'
-          prompt: 'Destination filename [startup-config]'
-          answer: 'startup-config'
+          
