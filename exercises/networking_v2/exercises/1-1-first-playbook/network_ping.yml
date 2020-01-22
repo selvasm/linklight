@@ -5,8 +5,9 @@
   gather_facts: no 
 
   tasks:
+  
     - debug:
-        var: "{{ ansible_facts['private_ip'] }}"
+        msg: "{{ ansible_facts['private_ip'] }}"
 #
 #    - name: Run ping to rtr4
 #      register: ping_result
