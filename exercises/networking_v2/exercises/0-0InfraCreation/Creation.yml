@@ -6,7 +6,7 @@
     - name: Create new  Routers
       azure_rm_virtualmachine:
         resource_group: AnsibleTower-Killian-Zoubayer
-        name: "{{ item }}"
+        name: "{{ item.name }}"
         admin_username: "{{ ansible_username }}"
         admin_password: "{{ ansible_password }}"
         image:
@@ -26,8 +26,20 @@
         vm_size: Standard_DS4_v2
         subnet: Router-1-Subnet
         virtual_network_name: ansible-vnet
+        network_interfaces: "{{ item.interface }}"
         tags:
           env: demo
       with_items:
-        - zrouter5
-        - zrouter4
+        - { name: Router-1 , interface: "Router-1VMNic f1_1" } 
+        - { name: Router-2 , interface: "Router-2VMNic f2_1 f2_2"}
+      async: 45
+      poll: 0
+
+    - name: To Wait till the routers are Deleted
+      wait_for:
+        host: "{{ item }}"
+        state: present
+        delay: 40
+      with_items:
+        - Router-1
+        - Router-2
