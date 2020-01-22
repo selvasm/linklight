@@ -25,4 +25,4 @@
         commands:
           command: 'copy running-config startup-config'
           prompt: 'Destination filename [startup-config]'
-          answer: '\r'
+          answer: 'startup-config'
