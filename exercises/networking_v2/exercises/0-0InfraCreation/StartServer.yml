@@ -8,7 +8,7 @@
 - hosts: localhost
   become: false
 
-
+  tasks:
 # To initiate the Start routers simultaneously across all the machine,
     - name: To Start the Routers
       azure_rm_virtualmachine:
