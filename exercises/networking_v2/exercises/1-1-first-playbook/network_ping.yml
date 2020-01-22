@@ -7,5 +7,5 @@
   tasks:
     - name: Run ping to rtr4
       net_ping:
-        dest: "{{ hostvars[item].public_ip }}"
+        dest: "{{ hostvars[item].private_ip }}"
       with_inventory_hostnames: all
