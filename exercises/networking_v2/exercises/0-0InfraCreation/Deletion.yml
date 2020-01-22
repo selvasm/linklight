@@ -3,7 +3,7 @@
   become: false
   tasks:
 
-    - name: Create new  Routers
+    - name: Delete the Routers and the associated storage
       azure_rm_virtualmachine:
         resource_group: AnsibleTower-Killian-Zoubayer
         name: "{{ item }}"
@@ -12,8 +12,10 @@
           - virtual_storage
           - public_ips
       with_items:
-        - Router-2
-        - Router-3
+        - Router-4
+        - zrouter3
+        - zrouter4
+        - zrouter5
       async: 45
       poll: 0
 
@@ -23,8 +25,10 @@
         state: absent
         delay: 40
       with_items:
-        - Router-2
-        - Router-3
+        - Router-4
+        - zrouter3
+        - zrouter4
+        - zrouter5
 
     
     - debug:
