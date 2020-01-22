@@ -2,7 +2,7 @@
 - name: PING ALL THE ROUTER NETWORK
   hosts: localhost  # Executes the playbook across the all the hosts under the SmartInventory
   connection: network_cli # Informs to use the network connections for the router
-  gather_facts: true 
+  gather_facts: false 
 
   tasks:
 
