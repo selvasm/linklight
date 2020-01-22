@@ -12,10 +12,9 @@
           - virtual_storage
           - public_ips
       with_items:
-        - Router-4
-        - zrouter3
-        - zrouter4
-        - zrouter5
+        - Router-1
+        - Router-2
+
       async: 45
       poll: 0
 
@@ -24,10 +23,8 @@
         host: "{{ item }}"
         state: absent
       with_items:
-        - Router-4
-        - zrouter3
-        - zrouter4
-        - zrouter5
+        - Router-1
+        - Router-2
 
     
     - debug:
