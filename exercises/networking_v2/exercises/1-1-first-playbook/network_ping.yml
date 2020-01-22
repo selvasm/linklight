@@ -6,7 +6,7 @@
 
   tasks:
     - name: PING TEST TO PRIVATE IP
-      net_ping:
+      ios_ping:
         dest: "{{ item }}"
       with_items:
         - Router-1
