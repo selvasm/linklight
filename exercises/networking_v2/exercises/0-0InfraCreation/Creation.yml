@@ -34,7 +34,7 @@
         - { name: Router-2 , interface: "Router-2VMNic,f2_1,f2_2"}
 
 
-    - name: To Wait till the routers are Deleted
+    - name: To Wait till the routers are Created
       wait_for:
         host: "{{ item }}"
         state: present
