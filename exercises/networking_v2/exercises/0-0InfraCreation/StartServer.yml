@@ -28,8 +28,11 @@
         host: "{{ item }}"
         state: started
         delay: 40
+        msg: "There is some issues with start of the {{ item }} .Please crossverify"
+      retries: 10
       with_items:
         - zrouter3
         - zrouter4
         - zrouter5
+      
 
