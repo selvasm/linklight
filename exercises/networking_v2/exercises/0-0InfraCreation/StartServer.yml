@@ -15,7 +15,6 @@
       azure_rm_virtualmachine:
         resource_group: AnsibleTower-Killian-Zoubayer
         name: "{{ item }}"
-        started: true
       with_items:
         - zrouter3
         - zrouter4
