@@ -6,4 +6,4 @@
   tasks:
   - debug:
       msg: "{{ hostvars[item].private_ip }}"
-    with_inventory_hostnames: all
+    with_inventory_hostnames: env
