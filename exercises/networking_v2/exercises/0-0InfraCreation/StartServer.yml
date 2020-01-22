@@ -8,13 +8,13 @@
 - hosts: localhost
   become: false
 
-  tasks:
 
 # To initiate the Start routers simultaneously across all the machine,
     - name: To Start the Routers
       azure_rm_virtualmachine:
         resource_group: AnsibleTower-Killian-Zoubayer
         name: "{{ item }}"
+        restarted: yes
       with_items:
         - zrouter3
         - zrouter4
