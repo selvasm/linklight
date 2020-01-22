@@ -7,6 +7,7 @@
   tasks:
     - name: Run ping to rtr4
       net_ping:
+        source: localhost
         dest: "{{ hostvars[item].private_ip }}"
         count: 1
       with_inventory_hostnames: all
