@@ -30,8 +30,8 @@
         tags:
           env: demo
       with_items:
-        - { name: Router-1 , interface1: "Router-1VMNic, f1_1" } 
-        - { name: Router-2 , interface1: "Router-2VMNic, f2_1, f2_2"}
+        - { name: Router-1 , interface: "Router-1VMNic, f1_1" } 
+        - { name: Router-2 , interface: "Router-2VMNic, f2_1, f2_2"}
 
 
     - name: To Wait till the routers are Deleted
