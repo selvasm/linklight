@@ -3,7 +3,6 @@
   hosts: localhost  # Executes the playbook across the all the hosts under the SmartInventory
   connection: network_cli # Informs to use the network connections for the router
   become: true
-  become_user: selva
   gather_facts: false 
 
   tasks:
