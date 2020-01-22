@@ -7,3 +7,10 @@
   - debug:
       msg: "{{ hostvars[item].private_ip }}"
     with_inventory_hostnames: env
+  
+  - name: To test the Netping
+    net_ping:
+      dest: "{{ hostvars[item].private_ip }}"
+      source: 127.0.0.1
+      count: 1
+    with_inventory_hostnames: env
