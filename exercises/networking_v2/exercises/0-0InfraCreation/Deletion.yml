@@ -23,7 +23,6 @@
       wait_for:
         host: "{{ item }}"
         state: absent
-        delay: 40
       with_items:
         - Router-4
         - zrouter3
