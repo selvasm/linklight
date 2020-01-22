@@ -22,5 +22,5 @@
 
     - name: Pushing the running to startup config
       ios_command:
-        command:
+        commands:
           - copy running-config startup-config
