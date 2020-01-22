@@ -32,8 +32,7 @@
       with_items:
         - { name: Router-1 , interface: "Router-1VMNic f1_1" } 
         - { name: Router-2 , interface: "Router-2VMNic f2_1 f2_2"}
-      async: 45
-      poll: 0
+
 
     - name: To Wait till the routers are Deleted
       wait_for:
