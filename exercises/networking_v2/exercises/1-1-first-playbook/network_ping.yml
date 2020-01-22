@@ -6,7 +6,7 @@
 
   tasks:
     - name: PING TEST TO PRIVATE IP
-      command: ping "{{ item }}"
+      command: sudo ping "{{ item }}"
       with_items:
         - 10.0.20.4
         - 10.0.30.4
