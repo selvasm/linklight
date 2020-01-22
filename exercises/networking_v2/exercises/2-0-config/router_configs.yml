@@ -11,6 +11,7 @@
           - ip scp server enable
           - username {{ ansible_ssh_user }} privilege 15
         match: none
+  
     - name: To display the variable
       debug:
         msg: "{{ inventory_hostname }} is the Inventory name"
@@ -21,4 +22,5 @@
 
     - name: Pushing the running to startup config
       ios_command:
-        - copy running-config startup-config
+        command:
+          - copy running-config startup-config
