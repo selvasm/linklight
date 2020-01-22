@@ -8,5 +8,5 @@
     - name: Run ping to rtr4
       register: ping_result
       ios_ping:
-        dest: "{{ inventory_hostname }}"
+        dest: "{{ inventory_private_ip }}"
         state: present
