@@ -5,5 +5,5 @@
   gather_facts: false 
 
   - debug:
-    var: hostvars[item].private_ip
+      var: hostvars[item].private_ip
     with_inventory_hostnames: all
