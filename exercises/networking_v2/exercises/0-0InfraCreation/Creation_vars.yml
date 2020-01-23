@@ -1,0 +1,6 @@
+---
+routerlist:
+  - { name: Router-1 , interface: "Router-1VMNic,f1_1" } 
+  - { name: Router-2 , interface: "Router-2VMNic,f2_1,f2_2" }
+  - { name: Router-3 , interface: "Router-3VMNic,f3_1,f3_2" }
+  - { name: Router-4 , interface: "Router-4VMNic,f4_1" }

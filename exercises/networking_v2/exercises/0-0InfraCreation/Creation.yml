@@ -1,8 +1,10 @@
 ---
 - hosts: localhost
   become: false
+  gather_facts: false
+  vars_files:
+    - Creation_vars.yml
   tasks:
-
     - name: Create new  Routers
       azure_rm_virtualmachine:
         resource_group: AnsibleTower-Killian-Zoubayer
@@ -29,21 +31,18 @@
         network_interfaces: "{{ item.interface }}"
         tags:
           env: demo
-      with_items:
-        - { name: Router-1 , interface: "Router-1VMNic,f1_1" } 
-        - { name: Router-2 , interface: "Router-2VMNic,f2_1,f2_2" }
-        - { name: Router-3 , interface: "Router-3VMNic,f3_1,f3_2" }
-        - { name: Router-4 , interface: "Router-4VMNic,f4_1" }
+      with_items: "{{ routerlist }}"
       async: 45
       poll: 0
+    
+    - name: To Sleep for sometime and let the azure to create VM
+      command: sleep 240
 
     - name: To Wait till the routers are Created
       wait_for:
-        host: "{{ item }}"
+        host: "{{ item.name }}"
         state: present
-        delay: 40
-      with_items:
-        - Router-1
-        - Router-2
-        - Router-3
-        - Router-4
+        delay: 10
+        timeout: 120 
+        connection_timeout: 20
+        with_items: "{{ routerlist }}"
